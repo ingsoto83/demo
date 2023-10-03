@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class FullscreenWidget extends StatelessWidget {
   const FullscreenWidget({super.key});
@@ -10,12 +11,18 @@ class FullscreenWidget extends StatelessWidget {
         title: Text("Fullscreen Widget"),
       ),
       body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/img/fondo.png'),
+              fit: BoxFit.cover
+            )
+          ),
           width: double.infinity,
           height: double.infinity,
-          color: Colors.green,
           child: Center(
-            child: Text("Que verdoso!!!", style: TextStyle(color: Colors.red[100], fontWeight: FontWeight.bold, fontSize: 30),),
+            child: Text("Travel App", style: GoogleFonts.dancingScript(fontSize: 42, fontWeight: FontWeight.bold)),
           ),
+          /* child: Image.asset('assets/img/fondo.png', fit: BoxFit.cover,)*/
       ),
     );
   }
