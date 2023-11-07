@@ -1,4 +1,17 @@
 class Users {
+  List<User>? users;
+
+  Users(List<dynamic> list){
+    if (list.isNotEmpty) {
+      users = <User>[];
+      for (var v in list) {
+        users!.add(User.fromJson(v));
+      }
+    }
+  }
+}
+
+class User {
   int? id;
   String? name;
   String? username;
@@ -8,7 +21,7 @@ class Users {
   String? website;
   Company? company;
 
-  Users(
+  User(
       {this.id,
         this.name,
         this.username,
@@ -18,7 +31,7 @@ class Users {
         this.website,
         this.company});
 
-  Users.fromJson(Map<String, dynamic> json) {
+  User.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     username = json['username'];
